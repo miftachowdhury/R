@@ -12,7 +12,11 @@
 #release date: 2017-11-16
 
 #import opioid data (dataset 1 - opioid deaths 2003-present)
-opd <- read.csv("https://health.data.ny.gov/api/views/sn5m-dv52/rows.csv?accessType=DOWNLOAD", stringsAsFactors = FALSE)
+opd <- tryCatch({
+  read.csv("https://health.data.ny.gov/api/views/sn5m-dv52/rows.csv?accessType=DOWNLOAD", stringsAsFactors = FALSE)
+}, error = function(e){
+ read.csv("https://github.com/miftachowdhury/R-NYS_Opioid_Deaths/raw/master/Data/Vital_Statistics__Opioid-Related_Deaths_by_County__Beginning_2003.csv", stringsAsFactors = FALSE) 
+})
 
 #check opioid data
 str(opd)
@@ -45,7 +49,11 @@ unique(opd$County)
 #date created: August 14, 2014
 
 #import population data (dataset 2 - resident population of New York State and counties beginning 1970)
-pop <- read.csv("https://data.ny.gov/api/views/krt9-ym2k/rows.csv?accessType=DOWNLOAD", stringsAsFactors = FALSE)
+pop <- tryCatch({
+  read.csv("https://data.ny.gov/api/views/krt9-ym2k/rows.csv?accessType=DOWNLOAD", stringsAsFactors = FALSE)
+}, error = function(e){
+ read.csv("https://github.com/miftachowdhury/R-NYS_Opioid_Deaths/raw/master/Data/Annual_Population_Estimates_for_New_York_State_and_Counties__Beginning_1970.csv", stringsAsFactors = FALSE) 
+})
 
 #check population data
 str(pop)
