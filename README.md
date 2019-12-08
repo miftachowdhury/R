@@ -1,6 +1,6 @@
 # R-NYS_Opioid_Deaths
 
-https://miftachowdhury.github.io/R-NYS_Opioid_Deaths/NYS_opioid_deaths.html
+https://miftachowdhury.github.io/nys_opioid_deaths.html
 
 This program analyzes data on opioid-related deaths in New York State between 2003 and 2017. The final product is a function that allows a user to enter the name of a NYS county and two years within the available range, and returns:
 1) Opioid-related death rates for each of those two years in that county and in New York State.
